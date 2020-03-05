@@ -1,0 +1,10 @@
+FROM poetry_test_base:latest
+
+# This preserves already built dependencies across docker
+# invocations for development.
+VOLUME /root/.cache/pypoetry/virtualenvs
+VOLUME /src
+
+EXPOSE 8888
+
+CMD "/usr/bin/bash"

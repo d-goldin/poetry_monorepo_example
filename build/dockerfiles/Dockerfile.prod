@@ -1,0 +1,10 @@
+FROM poetry_test_base:latest
+
+COPY . /src
+
+# Avoid creating a virtual environment, just use whatever interpreter
+# the system provides. Keeps image size smaller.
+#RUN poetry config virtualenvs.create false
+RUN cd /src/apps/app1 && poetry install
+
+CMD /src/scripts/run_app1.sh

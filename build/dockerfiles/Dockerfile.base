@@ -1,0 +1,15 @@
+FROM alpine:3.11.3
+
+
+# Installing py3-numpy here to avoid slow complication
+RUN apk add build-base python3 python3-dev libffi-dev py3-cffi openssl-dev bash ipython
+
+RUN pip3 install --upgrade pip
+RUN pip3 install "poetry==1.0.5"
+
+# Poetry's default behaviour is not very nice wrt
+# caching of container layers, so this is an approach
+# of how to deal with widely used dependencies that are
+# slow to install like numpy
+COPY build/dockerfiles/base/pyproject.toml /tmp/base/pyproject.toml
+RUN cd /tmp/base && poetry install

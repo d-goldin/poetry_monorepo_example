@@ -1,0 +1,8 @@
+.poetry_venvs
+
+**/dist
+**/*.egg-info
+**/__pycache__/
+**/poetry.lock
+**/pip-wheel-metadata/
+**/__pycache__/

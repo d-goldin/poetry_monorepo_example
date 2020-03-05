@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "testlib1"
+version = "0.1.0"
+description = "A testlib 1"
+authors = ["Dima <dgoldin+github@protonmail.ch>"]
+
+# Sadly no way to "rename", so wont work well like
+# that
+#packages = [
+#  { include = "*", from = "src" },
+#]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+numpy = "^1.18.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

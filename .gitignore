@@ -1,0 +1,18 @@
+build/dockerfiles/.Dockerfile.*.tag
+# local development cache
+.poetry_venvs/
+.venv
+shell.nix
+requirements.txt
+
+# Notebook checkpoints are probably not needed,
+# since git
+notebooks/.ipynb_checkpoints/
+
+# All the python build artifacts
+**/dist
+**/*.egg-info
+**/__pycache__/
+**/poetry.lock
+**/pip-wheel-metadata/
+**/__pycache__/
